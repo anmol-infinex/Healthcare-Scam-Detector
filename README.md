@@ -51,6 +51,17 @@ Launch the UI:
 streamlit run app/streamlit_app.py
 ```
 
+## Vercel Deployment
+
+The repository includes a Vercel-ready browser frontend and Python inference API:
+
+- Static frontend source: `public/`
+- Build output: `dist/`
+- Python API: `api/index.py`
+- Prediction endpoint: `/api/predict`
+
+Import the GitHub repository into Vercel and click Deploy. Vercel reads `vercel.json`, runs `npm run build`, serves `dist/`, and routes predictions to the Python Function.
+
 ## Results
 
 Training writes `models/metrics.json` with model comparison, class balance, and selected model metrics. The selector ranks models by scam recall first, then scam F1-score and accuracy.

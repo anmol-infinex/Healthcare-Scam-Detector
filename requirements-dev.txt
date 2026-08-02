@@ -1,0 +1,6 @@
+-r requirements.txt
+pandas>=2.2
+streamlit>=1.36
+matplotlib>=3.8
+seaborn>=0.13
+pytest>=8.0

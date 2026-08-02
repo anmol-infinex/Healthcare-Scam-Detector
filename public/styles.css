@@ -99,6 +99,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
 button.secondary {
   background: #e8eef3;
   color: var(--ink);

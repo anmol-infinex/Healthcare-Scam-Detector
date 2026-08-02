@@ -1,11 +1,29 @@
 {
   "version": 2,
-  "public": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "cleanUrls": true,
-  "rewrites": [
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{app,data,docs,notebooks,presentation,report,tests,public,scripts,node_modules,dist}/**",
+      "includeFiles": "models/healthcare_scam_detector.joblib",
+      "maxDuration": 10,
+      "memory": 1024
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/(.*\\.(?:css|js|ico|png|jpg|jpeg|gif|svg|webp|json))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
