@@ -1,0 +1,65 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\title{Healthcare Scam / Phishing Detector}
+\author{Anmol Rathod}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Problem}
+Healthcare scam messages imitate clinics, insurers, pharmacies, and government programs to steal money, credentials, or identity data.
+\end{frame}
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Healthcare messages are trusted by users.
+\item Scams often use urgency and fear.
+\item A lightweight classifier can support safer verification habits.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Dataset}
+\begin{itemize}
+\item UCI SMS Spam Collection public baseline.
+\item Curated healthcare seed examples.
+\item Binary labels: legitimate and scam/phishing.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Workflow}
+Data collection, validation, cleaning, EDA, TF-IDF, train/test split, cross-validation, tuning, model selection, evaluation, deployment.
+\end{frame}
+
+\begin{frame}{Models}
+\begin{itemize}
+\item Logistic Regression
+\item Multinomial Naive Bayes
+\item Linear SVM
+\item Random Forest
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+The training pipeline selects the best model by prioritizing scam recall, then F1-score and accuracy. Metrics are saved in \texttt{models/metrics.json}.
+\end{frame}
+
+\begin{frame}{Demo}
+The Streamlit app lets users paste a message, analyze risk, view confidence, inspect suspicious terms, and keep prediction history.
+\end{frame}
+
+\begin{frame}{Future Work}
+\begin{itemize}
+\item More licensed healthcare phishing datasets.
+\item Threshold tuning to reduce false negatives.
+\item LIME or SHAP explanations.
+\item API deployment.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+The project delivers a practical, explainable, laptop-friendly healthcare scam detector with a complete ML workflow and UI.
+\end{frame}
+\end{document}

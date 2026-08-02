@@ -1,0 +1,2 @@
+"""Healthcare scam detector package."""
+

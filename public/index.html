@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Healthcare Scam Detector</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div class="mast">
+          <p class="eyebrow">Healthcare message safety</p>
+          <h1>Healthcare Scam Detector</h1>
+          <p class="lede">Paste a healthcare SMS, email, or portal message to screen it for scam and phishing signals.</p>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" spellcheck="true" placeholder="Example: Urgent Medicare refund, click to verify your SSN"></textarea>
+
+        <div class="actions">
+          <button id="analyze" type="button">Analyze</button>
+          <button id="sample" type="button" class="secondary">Use Sample</button>
+        </div>
+
+        <section id="result" class="result idle" aria-live="polite">
+          <span class="status">Waiting for message</span>
+          <strong id="label">No prediction yet</strong>
+          <div class="meter"><span id="bar"></span></div>
+          <p id="explanation">The full Python ML project is available in the repository. This Vercel demo uses the same suspicious-signal vocabulary for instant browser-side screening.</p>
+          <div id="terms" class="terms"></div>
+        </section>
+      </section>
+
+      <section class="details">
+        <h2>Project workflow</h2>
+        <div class="grid">
+          <article><strong>Data</strong><span>UCI SMS Spam Collection plus healthcare seed examples.</span></article>
+          <article><strong>Models</strong><span>Logistic Regression, Naive Bayes, Linear SVM, Random Forest.</span></article>
+          <article><strong>Priority</strong><span>Ranks models by scam recall to reduce missed scams.</span></article>
+          <article><strong>App</strong><span>Local Streamlit UI and Vercel portfolio demo.</span></article>
+        </div>
+      </section>
+    </main>
+    <script src="/script.js"></script>
+  </body>
+</html>

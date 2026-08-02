@@ -1,0 +1,26 @@
+text,label,source
+"Your appointment with Riverside Clinic is confirmed for 10:30 AM on Tuesday. Reply STOP to opt out.",legit,synthetic_healthcare_seed
+"Reminder: Dr. Shah's office has received your lab results. Log in to the official patient portal or call the number on your insurance card.",legit,synthetic_healthcare_seed
+"Your prescription refill is ready at Main Street Pharmacy. No action is needed if you already collected it.",legit,synthetic_healthcare_seed
+"City Hospital billing statement is available in your secure portal. Contact patient services through the hospital website for questions.",legit,synthetic_healthcare_seed
+"Your annual wellness visit is due. Schedule through your known clinic portal or call your provider directly.",legit,synthetic_healthcare_seed
+"Insurance claim EOB is ready. This is not a bill. Sign in through your insurer's official website.",legit,synthetic_healthcare_seed
+"Flu vaccine appointments are open at your local clinic. Bring your insurance card and ID.",legit,synthetic_healthcare_seed
+"Your telehealth visit starts in 15 minutes. Join from the patient portal you normally use.",legit,synthetic_healthcare_seed
+"LabCorp appointment reminder: fasting may be required for your test. Review instructions in your account.",legit,synthetic_healthcare_seed
+"Your care team sent a secure message about medication instructions. Please check the official patient portal.",legit,synthetic_healthcare_seed
+"URGENT Medicare reward: click this link now to claim a free medical card and enter your SSN.",scam,synthetic_healthcare_seed
+"Your health insurance is suspended. Verify your bank account immediately to restore coverage.",scam,synthetic_healthcare_seed
+"COVID benefit approved. Send your one time password to receive a $500 healthcare refund.",scam,synthetic_healthcare_seed
+"Final notice: unpaid hospital bill. Pay with gift cards today or your account will be sent to police.",scam,synthetic_healthcare_seed
+"Medicaid records need confirmation. Click the short link and upload your driver's license and social security number.",scam,synthetic_healthcare_seed
+"Free home test kit available for limited time. Confirm identity with credit card to reserve shipment.",scam,synthetic_healthcare_seed
+"Your pharmacy account is locked. Reply with password and OTP to release your prescription.",scam,synthetic_healthcare_seed
+"Insurance refund pending. Visit unknown portal and provide routing number within 30 minutes.",scam,synthetic_healthcare_seed
+"We detected billing problem on your medical plan. Click here to avoid cancellation.",scam,synthetic_healthcare_seed
+"Congratulations, you won a healthcare grant. Pay processing fee now to receive funds.",scam,synthetic_healthcare_seed
+"Phishing alert simulation: fake clinic asks employee to open attachment and verify payroll login.",scam,synthetic_healthcare_seed
+"Patient records update failed. Download this invoice.exe to continue receiving benefits.",scam,synthetic_healthcare_seed
+"Your Medicare card will expire today. Call this number and share full SSN to reactivate.",scam,synthetic_healthcare_seed
+"Provider portal warning: unusual login. Enter password on the attached form to keep access.",scam,synthetic_healthcare_seed
+"Urgent vaccine subsidy: transfer small activation payment to unlock reimbursement.",scam,synthetic_healthcare_seed

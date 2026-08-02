@@ -1,0 +1,53 @@
+{
+  "selected_model": "linear_svm",
+  "test_metrics": {
+    "accuracy": 0.9854791868344628,
+    "precision_scam": 0.967741935483871,
+    "recall_scam": 0.916030534351145,
+    "f1_scam": 0.9411764705882353,
+    "roc_auc": 0.9908769316700802
+  },
+  "comparison": [
+    {
+      "model": "linear_svm",
+      "cv_recall_macro": 0.942492814399986,
+      "accuracy": 0.9854791868344628,
+      "precision_scam": 0.967741935483871,
+      "recall_scam": 0.916030534351145,
+      "f1_scam": 0.9411764705882353,
+      "roc_auc": 0.9908769316700802
+    },
+    {
+      "model": "multinomial_nb",
+      "cv_recall_macro": 0.911366619707662,
+      "accuracy": 0.9864472410454985,
+      "precision_scam": 1.0,
+      "recall_scam": 0.8931297709923665,
+      "f1_scam": 0.9435483870967742,
+      "roc_auc": 0.9881095445236201
+    },
+    {
+      "model": "logistic_regression",
+      "cv_recall_macro": 0.9190151148387546,
+      "accuracy": 0.9806389157792836,
+      "precision_scam": 0.9743589743589743,
+      "recall_scam": 0.8702290076335878,
+      "f1_scam": 0.9193548387096774,
+      "roc_auc": 0.9886680997274928
+    },
+    {
+      "model": "random_forest",
+      "cv_recall_macro": 0.8458541159640263,
+      "accuracy": 0.9593417231364957,
+      "precision_scam": 1.0,
+      "recall_scam": 0.6793893129770993,
+      "f1_scam": 0.8090909090909091,
+      "roc_auc": 0.9872590172813595
+    }
+  ],
+  "rows": 5163,
+  "class_balance": {
+    "legit": 4506,
+    "scam": 657
+  }
+}
