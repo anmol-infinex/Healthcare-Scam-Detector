@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
@@ -11,7 +12,9 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-MODEL_PATH = Path(__file__).resolve().parents[1] / "models" / "healthcare_scam_detector.joblib"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_MODEL_PATH = PROJECT_ROOT / "models" / "healthcare_scam_detector.joblib"
+MODEL_PATH = Path(os.environ.get("MODEL_PATH", DEFAULT_MODEL_PATH))
 
 SUSPICIOUS_KEYWORDS = {
     "urgent",

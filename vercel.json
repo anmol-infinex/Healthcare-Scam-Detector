@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
+  "installCommand": "python -m pip install --upgrade pip && python -m pip install -r requirements.txt && npm install",
   "cleanUrls": true,
   "functions": {
     "api/index.py": {

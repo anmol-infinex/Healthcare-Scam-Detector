@@ -16,7 +16,7 @@ Vercel can import the GitHub repository with these settings from `vercel.json`:
 
 - Build Command: `npm run build`
 - Output Directory: `dist`
-- Install Command: `npm install`
+- Install Command: `python -m pip install --upgrade pip && python -m pip install -r requirements.txt && npm install`
 - API Route: `/api/predict`
 
 No manual dashboard changes are required.
