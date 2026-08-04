@@ -1,0 +1,123 @@
+<svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06131F"/>
+      <stop offset="0.55" stop-color="#0A2033"/>
+      <stop offset="1" stop-color="#09101A"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="800" y1="95" x2="800" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42E8E0"/>
+      <stop offset="0.5" stop-color="#2DA8FF"/>
+      <stop offset="1" stop-color="#6A5CFF"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="800" y1="120" x2="800" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132C45"/>
+      <stop offset="0.5" stop-color="#0E4069"/>
+      <stop offset="1" stop-color="#0B1F33"/>
+    </linearGradient>
+    <linearGradient id="shieldEdge" x1="760" y1="120" x2="840" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8CF6FF"/>
+      <stop offset="0.5" stop-color="#33BFFF"/>
+      <stop offset="1" stop-color="#5C76FF"/>
+    </linearGradient>
+    <linearGradient id="cross" x1="765" y1="185" x2="835" y2="315" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9FFFF"/>
+      <stop offset="1" stop-color="#30D6FF"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1600" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="shadow" x="0" y="0" width="1600" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="innerGlow" x="0" y="0" width="1600" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 250) rotate(90) scale(155 155)">
+      <stop stop-color="#34D4FF" stop-opacity="0.45"/>
+      <stop offset="0.55" stop-color="#1E9CFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0B1220" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="500" rx="36" fill="url(#bg)"/>
+  <ellipse cx="800" cy="250" rx="190" ry="190" fill="url(#orb)" filter="url(#blur)"/>
+
+  <!-- left-side medical grid -->
+  <g opacity="0.26">
+    <circle cx="220" cy="110" r="3" fill="#57F0FF"/>
+    <circle cx="250" cy="142" r="2.5" fill="#57F0FF"/>
+    <circle cx="285" cy="175" r="2.8" fill="#57F0FF"/>
+    <circle cx="198" cy="190" r="2.4" fill="#57F0FF"/>
+    <circle cx="222" cy="220" r="2.4" fill="#57F0FF"/>
+    <circle cx="260" cy="252" r="3" fill="#57F0FF"/>
+    <circle cx="290" cy="290" r="2.4" fill="#57F0FF"/>
+    <circle cx="330" cy="250" r="2.4" fill="#57F0FF"/>
+    <circle cx="360" cy="285" r="2.4" fill="#57F0FF"/>
+    <circle cx="395" cy="325" r="2.4" fill="#57F0FF"/>
+    <path d="M180 120L410 330" stroke="#57F0FF" stroke-width="1.2" stroke-dasharray="6 10"/>
+    <path d="M175 215H410" stroke="#57F0FF" stroke-width="1.2" stroke-dasharray="6 10"/>
+  </g>
+
+  <!-- right-side digital particles -->
+  <g opacity="0.26">
+    <circle cx="1260" cy="120" r="2.7" fill="#93F3FF"/>
+    <circle cx="1320" cy="138" r="2.4" fill="#93F3FF"/>
+    <circle cx="1360" cy="172" r="2.4" fill="#93F3FF"/>
+    <circle cx="1410" cy="208" r="2.7" fill="#93F3FF"/>
+    <circle cx="1345" cy="250" r="2.4" fill="#93F3FF"/>
+    <circle cx="1390" cy="286" r="2.4" fill="#93F3FF"/>
+    <circle cx="1440" cy="328" r="2.4" fill="#93F3FF"/>
+    <path d="M1240 130L1450 330" stroke="#93F3FF" stroke-width="1.2" stroke-dasharray="5 10"/>
+  </g>
+
+  <!-- shield glow -->
+  <path d="M800 108L930 162V246C930 330 870 379 800 420C730 379 670 330 670 246V162L800 108Z" fill="url(#shieldEdge)" opacity="0.16" filter="url(#blur)"/>
+
+  <!-- shield body -->
+  <g filter="url(#shadow)">
+    <path d="M800 120L922 170V245C922 322 864 371 800 410C736 371 678 322 678 245V170L800 120Z" fill="url(#shield)" stroke="url(#shieldEdge)" stroke-width="6"/>
+    <path d="M800 132L905 176V242C905 310 855 353 800 388C745 353 695 310 695 242V176L800 132Z" fill="none" stroke="#7EF5FF" stroke-opacity="0.42" stroke-width="2"/>
+  </g>
+
+  <!-- cross -->
+  <g filter="url(#innerGlow)">
+    <rect x="776" y="182" width="48" height="136" rx="12" fill="url(#cross)"/>
+    <rect x="742" y="216" width="116" height="48" rx="12" fill="url(#cross)"/>
+  </g>
+
+  <!-- holographic ring -->
+  <g opacity="0.9">
+    <ellipse cx="800" cy="372" rx="145" ry="26" fill="#18C7FF" fill-opacity="0.10"/>
+    <ellipse cx="800" cy="372" rx="175" ry="32" stroke="#47E8FF" stroke-opacity="0.30" stroke-width="3"/>
+    <ellipse cx="800" cy="372" rx="215" ry="38" stroke="#47E8FF" stroke-opacity="0.16" stroke-width="2" stroke-dasharray="8 10"/>
+  </g>
+
+  <!-- subtle side silhouettes -->
+  <path d="M460 170C500 110 545 98 574 124C602 150 594 211 557 260C518 313 454 338 412 325C369 312 355 249 388 208C405 185 432 182 460 170Z" fill="#000814" opacity="0.36"/>
+  <path d="M1140 160C1098 102 1050 95 1020 123C991 150 999 210 1038 258C1079 309 1144 332 1187 321C1230 310 1242 247 1208 206C1190 184 1161 182 1140 160Z" fill="#07111D" opacity="0.28"/>
+
+  <!-- floating medical icons -->
+  <g filter="url(#shadow)">
+    <g transform="translate(470 300)">
+      <rect x="0" y="0" width="100" height="66" rx="16" fill="#0F2236" stroke="#27D2FF" stroke-opacity="0.75" stroke-width="2"/>
+      <path d="M26 33H74" stroke="#8EF8FF" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 19V47" stroke="#8EF8FF" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1030 250)">
+      <rect x="0" y="0" width="112" height="72" rx="16" fill="#101D2D" stroke="#5EE7FF" stroke-opacity="0.75" stroke-width="2"/>
+      <rect x="17" y="17" width="78" height="38" rx="10" fill="#17304B" stroke="#5EE7FF" stroke-opacity="0.35"/>
+      <path d="M42 34H72" stroke="#A8FAFF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M57 24V44" stroke="#A8FAFF" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- central subtle message cards -->
+  <g opacity="0.85">
+    <rect x="585" y="88" width="168" height="34" rx="12" fill="#14233B" stroke="#3DE0FF" stroke-opacity="0.45"/>
+    <rect x="848" y="88" width="168" height="34" rx="12" fill="#14233B" stroke="#3DE0FF" stroke-opacity="0.45"/>
+    <rect x="585" y="392" width="168" height="34" rx="12" fill="#14233B" stroke="#3DE0FF" stroke-opacity="0.45"/>
+    <rect x="848" y="392" width="168" height="34" rx="12" fill="#14233B" stroke="#3DE0FF" stroke-opacity="0.45"/>
+  </g>
+</svg>
