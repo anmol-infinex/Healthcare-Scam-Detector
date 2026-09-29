@@ -1,4 +1,4 @@
-# Healthcare Scam / Phishing Detector
+# 🛡️ Healthcare Scam / Phishing Detector
 
 ![Healthcare Scam Detector](assets/healthcare-hero.svg)
 
@@ -7,143 +7,55 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Flask](https://img.shields.io/badge/Flask-API-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?logo=vercel&logoColor=white)](https://vercel.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-An end-to-end machine learning project by **Anmol Rathod** that classifies healthcare-related SMS, emails, and short messages as `legit` or `scam`.
+> An end-to-end machine learning project that analyzes healthcare-related SMS, emails, and short messages and classifies them as **legit** or **scam**.
 
-## Overview
+## 🎯 Why It Matters
 
-Healthcare teams and patients increasingly rely on text-based communication for appointments, lab reports, billing updates, prescription notices, and portal access. That convenience also creates a very practical attack surface. A scam message does not need to be sophisticated. It only needs to look believable for a few seconds.
+Healthcare communication is increasingly delivered through messages about appointments, billing, lab reports, prescriptions, insurance, and portal access. That creates opportunities for phishing and fraud.
 
-This project screens those messages before a user reacts to them. It uses classical NLP, a lightweight model stack, and a browser-based interface so the system stays fast, explainable, and easy to deploy.
+This project focuses on identifying suspicious healthcare-themed messages **before a user acts on them**, using a lightweight and explainable NLP pipeline.
 
-## Why this project exists
+## 🔍 What the Project Does
 
-Healthcare scams often use urgency, fake insurance or Medicare claims, credential theft, and payment pressure. Missing a scam is more costly than flagging a suspicious message, so the project prioritizes scam recall while keeping the model lightweight and understandable.
+**Message → Cleaning → TF-IDF Features → Model Comparison → Scam/Legit Prediction → Confidence & Explanation**
 
-## What the project does
+The training workflow uses a public SMS dataset together with a healthcare-focused seed dataset, then compares several classical NLP models before selecting a deployable model.
 
-The system follows a straightforward workflow:
+## ✨ Key Features
 
-1. load and clean a documented SMS dataset,
-2. merge it with a curated healthcare seed set,
-3. compare several classical NLP models,
-4. choose the best model for deployment,
-5. serve predictions through a browser UI and Python API.
-
-The selected model is optimized for short-message phishing detection, where the signal usually lives in a few words, a link, or an urgent request.
-
-## Key features
-
-- Clean browser interface with a premium-looking layout
-- Scam-aware result display with confidence and explanation
-- Lightweight NLP pipeline based on TF-IDF
-- Classical model comparison before selection
-- Fast local training and inference
-- Vercel-ready frontend and Python API
+- Scam-focused text classification
+- TF-IDF-based NLP pipeline
+- Comparison of Naive Bayes, Logistic Regression, Linear SVM, and Random Forest
+- Confidence-aware prediction output
+- Browser UI + Python API
+- Local training and inference
+- Vercel-ready deployment
 - Unit tests for core utilities
 
-## Tech stack
+## 🧰 Tech Stack
 
-Python, pandas, scikit-learn, TF-IDF, Logistic Regression, Multinomial Naive Bayes, Linear SVM, Random Forest, joblib, Streamlit, Flask, pytest.
+Python · pandas · scikit-learn · TF-IDF · Logistic Regression · Naive Bayes · Linear SVM · Random Forest · joblib · Streamlit · Flask · pytest
 
-## Dataset
+## 📚 Dataset
 
-The primary public source is the **UCI SMS Spam Collection**, a public set of **5,574 English SMS messages** labeled ham/spam. The training pipeline downloads it when internet access is available. A healthcare-focused seed dataset is included at `data/processed/healthcare_seed_messages.csv` so the project remains runnable offline.
+The primary public source is the **UCI SMS Spam Collection (5,574 messages)**, supplemented by a healthcare seed dataset included in the repository.
 
-### Label mapping
-
-- `ham`, `legitimate`, `legit`, `safe` → `legit`
-- `spam`, `smishing`, `phishing`, `scam`, `fraud` → `scam`
-
-More dataset details are documented in `docs/dataset.md`.
-
-## Model approach
-
-The project compares the following classical NLP models:
-
-- Multinomial Naive Bayes
-- Logistic Regression
-- Linear Support Vector Machine
-- Random Forest
-
-Why classical models? For short phishing-style messages, sparse lexical features often matter more than deep semantic reasoning. TF-IDF keeps the pipeline compact and works well with linear classifiers. Random Forest stays in the comparison set for benchmarking, but the final choice is driven by scam recall, F1-score, and deployability.
-
-## Installation
+## 🚀 Quick Start
 
 ```bash
 python -m pip install -r requirements.txt
-```
-
-## Usage
-
-### Train and save the model
-
-```bash
 python -m src.train --rebuild-data
-```
-
-### Run command-line prediction
-
-```bash
 python -m src.predict "Urgent Medicare refund, click to verify your SSN"
-```
-
-### Launch the UI
-
-```bash
 streamlit run app/streamlit_app.py
 ```
 
-## Web demo
+## 🌐 Deployment
 
-The repository includes a Vercel-ready browser frontend and Python inference API.
+The project includes a browser frontend and Python inference API designed for deployment with Vercel.
 
-- Static frontend source: `public/`
-- Build output: `dist/`
-- Python API: `api/index.py`
-- Prediction endpoint: `/api/predict`
-
-Import the GitHub repository into Vercel and click Deploy. Vercel reads `vercel.json`, runs `npm run build`, serves `dist/`, and routes predictions to the Python Function.
-
-## API
-
-The inference layer exposes a small JSON API. The browser app and serverless function follow the same principle: send a message, receive a risk-aware prediction, explanation, and confidence.
-
-## Results
-
-Training writes `models/metrics.json` with model comparison, class balance, and selected model metrics. The selector ranks models by scam recall first, then scam F1-score and accuracy.
-
-## Project structure
-
-```text
-app/                 Streamlit interface
-data/                Raw and processed datasets
-docs/                Dataset and project notes
-models/              Saved model and metrics
-notebooks/           Notebook placeholder for EDA
-presentation/        Beamer presentation
-report/              Report copy
-src/                 Training, evaluation, prediction code
-tests/               Unit tests
-assets/              README visuals and banner art
-idea.tex             LaTeX report
-```
-
-## Screenshots
-
-The included web UI is intentionally minimal and fast. It is designed to show the prediction clearly, not to overwhelm the user with controls.
-
-## Future work
-
-- Add more verified healthcare-specific phishing datasets when licenses allow redistribution.
-- Add threshold tuning with a validation set for stricter false-negative control.
-- Add SHAP or LIME explanations for richer model interpretability.
-- Package as a small API for integration with clinic helpdesk workflows.
-- Extend the browser experience with a darker, more visual security-style theme.
-
-## Author
+## 👨‍💻 Author
 
 **Anmol Rathod**
 
-If you use this project in a presentation or internship submission, keep the architecture notes and dataset sources intact so the evaluation remains reproducible.
+Built as an applied AI + cybersecurity project for phishing/scam detection research.
